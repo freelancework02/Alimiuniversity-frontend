@@ -31,9 +31,18 @@ export default function AddAnnoucenment({
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { ...form, id: initialData?.id ?? Date.now() };
-    // simulate save
     console.log("Save Announcement →", payload);
     onSave?.(payload);
+  };
+
+  const handleCancel = () => {
+    if (typeof onCancel === "function") {
+      onCancel();
+      return;
+    }
+    if (typeof window !== "undefined" && window.history && window.history.length > 1) {
+      window.history.back();
+    }
   };
 
   return (
@@ -52,10 +61,11 @@ export default function AddAnnoucenment({
           </p>
         </div>
         <div className="flex items-center gap-2">
-          {onCancel && (
+          {(onCancel || true) && (
             <button
-              onClick={onCancel}
-              className="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-200"
+              type="button"
+              onClick={handleCancel}
+              className="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-200 cursor-pointer pointer-events-auto appearance-none"
             >
               <ArrowLeft className="h-4 w-4" />
               Back
@@ -64,7 +74,7 @@ export default function AddAnnoucenment({
           <button
             form="announcement-form"
             type="submit"
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 shadow-sm hover:shadow-md cursor-pointer pointer-events-auto appearance-none"
           >
             <Save className="h-4 w-4" />
             Save
@@ -207,18 +217,18 @@ export default function AddAnnoucenment({
 
         {/* Mobile Save/Back duplicated at bottom for usability */}
         <div className="md:hidden flex justify-end gap-2">
-          {onCancel && (
+          {(onCancel || true) && (
             <button
               type="button"
-              onClick={onCancel}
-              className="rounded-lg bg-slate-100 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-200"
+              onClick={handleCancel}
+              className="!cursor-pointer pointer-events-auto appearance-none rounded-lg bg-slate-100 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-200"
             >
               Back
             </button>
           )}
           <button
             type="submit"
-            className="rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700"
+            className="!cursor-pointer pointer-events-auto appearance-none rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700"
           >
             Save
           </button>

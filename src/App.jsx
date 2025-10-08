@@ -10,6 +10,16 @@ import ListingPage from "./views/ListingPage";
 import CreatePage from "./views/CreatePage";
 import ListingArticle from "./views/ListingArticle";
 import AddArticle from "./views/AddArticle";
+import AddCategory from "./views/AddCategory";
+import ListingCategory from "./views/ListingCategory";
+import AddTopic from "./views/AddTopic";
+import ListingTopic from "./views/ListingTopic";
+import AddDepartment from "./views/AddDepartment"
+import ListingDepartment from "./views/ListingDepartment"
+import AddCourse from "./views/AddCourse";
+import ListingCourse from "./views/ListingCourse";
+import AddCurriculum from "./views/AddCurriculum";
+import ListingCurriculum from "./views/ListingCurriculum";
 
 export default function App() {
   return (
@@ -37,6 +47,31 @@ export default function App() {
             {/* Article route */}
           <Route path="/Listingarticle" element={<ListingArticle />} />
           <Route path="/addarticle" element={<AddArticle />} />
+
+           {/* Category route */}
+          <Route path="/addcategory" element={<AddCategory />} />
+          <Route path="/listingcategory" element={<ListingCategory />} />
+
+
+            {/* Topic route */}
+          <Route path="/addtopic" element={<AddTopic />} />
+          <Route path="/listingtopic" element={<ListingTopic />} />
+
+
+           {/* Department route */}
+          <Route path="/adddepartment" element={<AddDepartment />} />
+          <Route path="/listingdepartment" element={<ListingDepartment />} />
+
+
+           {/* Courses route */}
+          <Route path="/addcourses" element={<AddCourse />} />
+          <Route path="/listingcourses" element={<ListingCourse />} />
+
+
+           {/* curriculum route */}
+          <Route path="/addcurriculum" element={<AddCurriculum />} />
+          <Route path="/listingcurriculum" element={<ListingCurriculum />} />
+          
 
 
 

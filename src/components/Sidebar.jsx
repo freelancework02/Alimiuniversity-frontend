@@ -41,8 +41,8 @@ const sidebarConfig = [
     icon: PenSquare,
     children: [
       { name: "Articles", urdu: "مضامین", target: "articles-list-content", path: "/Listingarticle" },
-      { name: "Categories", urdu: "زمرے", target: "blog-categories-list-content", dataKey: "blogCategories", path: "/blog-categories" },
-      { name: "Topics", urdu: "عنوانات", target: "blog-topics-list-content", dataKey: "blogTopics", path: "/blog-topics" },
+      { name: "Categories", urdu: "زمرے", target: "blog-categories-list-content", dataKey: "blogCategories", path: "/listingcategory" },
+      { name: "Topics", urdu: "عنوانات", target: "blog-topics-list-content", dataKey: "blogTopics", path: "/listingtopic" },
     ],
   },
   {
@@ -51,9 +51,9 @@ const sidebarConfig = [
     color: "violet",
     icon: GraduationCap,
     children: [
-      { name: "Departments", urdu: "شعبہ جات", target: "departments-list-content", path: "/departments" },
-      { name: "Courses", urdu: "کورسز", target: "courses-list-content", path: "/courses" },
-      { name: "Curriculum", urdu: "نصاب", target: "curriculum-list-content", path: "/curriculum" },
+      { name: "Departments", urdu: "شعبہ جات", target: "departments-list-content", path: "/listingdepartment" },
+      { name: "Courses", urdu: "کورسز", target: "courses-list-content", path: "/listingcourses" },
+      { name: "Curriculum", urdu: "نصاب", target: "curriculum-list-content", path: "/listingcurriculum" },
       { name: "Online Classes", urdu: "آن لائن کلاسز", target: "online-classes-list-content", dataKey: "onlineClasses", path: "/online-classes" },
     ],
   },

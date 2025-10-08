@@ -62,7 +62,7 @@ export default function AddGallery() {
 
         <button
           onClick={() => navigate("/gallery")}
-          className="flex items-center text-slate-600 hover:text-slate-800 transition-colors"
+          className="cursor-pointer flex items-center text-slate-600 hover:text-slate-800 transition-colors"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
           Back to Gallery
@@ -171,13 +171,13 @@ export default function AddGallery() {
           <button
             type="button"
             onClick={() => navigate("/gallery")}
-            className="bg-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-300 font-semibold"
+            className="cursor-pointer bg-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-300 font-semibold"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 shadow-sm hover:shadow-md transition-all flex items-center"
+            className="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 shadow-sm hover:shadow-md transition-all flex items-center"
           >
             <Save className="w-4 h-4 mr-2" />
             {id ? "Update Item" : "Save Item"}
